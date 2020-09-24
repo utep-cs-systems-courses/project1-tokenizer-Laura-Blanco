@@ -13,7 +13,7 @@ int space_char(char c)
 }
 
 int non_space_char(char c){
-  if((c != ' ') || (c != '\t')&& (c != '\0')){
+  if((c != ' ') && (c != '\t')&& (c != '\0')){
     return 1;
   }
   else{
@@ -32,7 +32,7 @@ char *word_start(char *str){
     c = *p;
   }
   printf("%c\n",*p);
-  return *p;
+  return p;
 }
 
 char *word_terminator(char *word){
@@ -44,7 +44,7 @@ char *word_terminator(char *word){
      c = *p;
   }
   printf("%c\n",*p);
-  return *p;
+  return p;
 }
 
 int count_words(char *str){

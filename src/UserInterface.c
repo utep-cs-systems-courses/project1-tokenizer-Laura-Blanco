@@ -13,7 +13,7 @@ int main()
   savedF = space_char('\t');
   printf("%d\n", savedF);*/
   char *str1 = "hap op";
-  word_start(str1);
-  // word_terminator(str1);
+  // word_start(str1);
+  word_terminator(str1);
 }
   

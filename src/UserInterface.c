@@ -12,8 +12,10 @@ int main()
   printf("%d\n", savedF);
   savedF = space_char('\t');
   printf("%d\n", savedF);*/
-  char *str1 = "hap op";
-  // word_start(str1);
-  word_terminator(str1);
+  char *str1 = "  hap  py ";
+  word_start(str1);
+  // count_words(str1);
+  // str1 = "happy  ";
+  // count_words(str1);
 }
   

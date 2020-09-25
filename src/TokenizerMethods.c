@@ -23,32 +23,40 @@ int non_space_char(char c){
 
 char *word_start(char *str){
   char *p= str;
-  char c = *p;
-  
-  // printf("%p\n",*p);
-  // printf("%p\n",*str);
-  while(space_char(c)){
-    *(p++);
-    c = *p;
+  // char c = *p;
+  while(space_char(*p)){
+    p++;
+    // c = *p;
   }
-  printf("%c\n",*p);
+  // printf("%c\n",*p);
   return p;
 }
 
 char *word_terminator(char *word){
   char *p = word;
-  char c = *p;
-  /* possibly use word count here?? */ 
-  while(non_space_char(c)){
-     *(p++);
-     c = *p;
+  // char c = *p;
+  while(non_space_char(*p)){
+     p++;
+     // c = *p;
   }
-  printf("%c\n",*p);
+  //  printf("%c\n",*p);
   return p;
 }
 
 int count_words(char *str){
-  return 0;
+  int number = 0;
+  char *start = word_start(str);
+  char *term;
+  while(non_space_char(*start)){
+    number++;
+    term = word_terminator(start);
+    if((*term) == '\0'){
+      break;
+    }
+    start = word_start(term);
+  }
+  // printf("%d\n", number);  
+  return number;
 
   
   }

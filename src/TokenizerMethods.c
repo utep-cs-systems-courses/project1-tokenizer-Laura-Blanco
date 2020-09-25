@@ -1,6 +1,6 @@
 #include "tokenizer.h"
 #include <stdio.h>
-
+#include <stdlib.h>
 
 int space_char(char c)
 {
@@ -57,17 +57,33 @@ int count_words(char *str){
   }
   // printf("%d\n", number);  
   return number;
+}
 
-  
-  }
+
 char *copy_str(char *inStr, short len){
-  char *p = inStr;
-  return *p;
+  char *p = malloc((len+1)* sizeof(char));
+  char *start = word_start(inStr);
+  int i = 0;
+  for(;non_space_char(*start);start++){
+    *(p+i) = *start;
+    i++;
+    printf("%s\n", p);
+    printf("%s\n", start);
+  }
+  // char *p = inStr;
+  return p;
 }
 /*
 void print_tokens(char**){
 }
 void free_tokens(char**){
-}
-char **tokenize(char *s){
+} */
+/*
+char **tokenize(char *s)
+{
+  int noWords = count_words(s);
+  char *str1 = malloc((noWords+1) * sizeof(char));
+  //until series reaches null then we know series is over
+  
+  
   }*/

@@ -12,10 +12,12 @@ int main()
   printf("%d\n", savedF);
   savedF = space_char('\t');
   printf("%d\n", savedF);*/
-  char *str1 = "  hap  py ";
+  char *str1 = "  happy";
   word_start(str1);
   // count_words(str1);
   // str1 = "happy  ";
   // count_words(str1);
+  copy_str(str1,5);
+  
 }
   

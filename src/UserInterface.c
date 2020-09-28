@@ -7,7 +7,7 @@ int main()
 {
   char str[75]; //array
   List *list = init_history();
-
+  
   printf("Welcome\n");
 
   while(1){ //infinite while loop until break
@@ -37,6 +37,7 @@ int main()
       char **tokens = tokenize(str); //calls the tokenize function with str input by user
       print_tokens(tokens); 
       add_history(list, str);
+      print_history(list);
       free_tokens(tokens); 
 
     }

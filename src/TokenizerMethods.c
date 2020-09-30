@@ -22,14 +22,13 @@ int non_space_char(char c){ //checks that character is not a space
 }
 
 char *word_start(char *str){ //returns a pointer to the start of the string input
-  char *p= str;
-  // char c = *p;
-  while(space_char(*p)){
-    p++;
-    // c = *p;
+  char *start= str;
+  while(space_char(*start)){
+    start++;
+    // c = *start;
   }
-  // printf("%c\n",*p);
-  return p;
+  // printf("%c\n",*start);
+  return start;
 }
 
 char *word_terminator(char *word){ //returns a pointer to the end of string input
@@ -55,26 +54,26 @@ int count_words(char *str){ //counts the words in a string
     }
     start = word_start(term);
   }
-  // printf("%d\n", number);  
+  //  printf("%d\n", number);  
   return number;
 }
 
 
 char *copy_str(char *inStr, short len){ //returns a copy of the string inputted
-  char *p = malloc((len+1)* sizeof(char)); //allocates space for word
-  char *start = word_start(inStr); 
+  char *pCopy = malloc((len+1)* sizeof(char)); //allocates space for word 
   int i = 0;
-  for(;non_space_char(*start);start++){
-    *(p+i) = *start; //increments the address of p to place value in correct place
+  // char *start = word_start(inStr);
+  while(i < len){ //continues until we reach the end
+    *(pCopy+i) = *(inStr + i); //copying the inStr to p
     i++;
-    // printf("%s\n", p);
-    // printf("%s\n", start);
   }
-  // char *p = inStr;
-  return p;
+  *(pCopy+len) = '\0'; //placing null character in last value of p to know when it ends
+  // char *pCopy = inStr;
+  return pCopy;
 }
 void print_tokens(char **tokens){ 
   int i = 0;
+  printf("\n");
   while(tokens[i] != NULL){ //continues until end of tokens
     printf("%s\n", tokens[i]);
     i++;
@@ -101,5 +100,4 @@ char **tokenize(char *s)
   }
   str1[noWords] = NULL; //sets last index to NULL to determine when we have reached end
   return str1;
-  
   }

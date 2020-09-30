@@ -37,7 +37,6 @@ int main()
       char **tokens = tokenize(str); //calls the tokenize function with str input by user
       print_tokens(tokens); 
       add_history(list, str);
-      print_history(list);
       free_tokens(tokens); 
 
     }

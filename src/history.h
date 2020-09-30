@@ -31,4 +31,6 @@ void print_history(List *list);
 /*Free the history list and the strings it references. */
 void free_history(List *list);
 
+short lengthS(char *str);
+
 #endif
